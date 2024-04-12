@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  rest-verticle:
+    build:
+      context: ./RestVerticle
+    ports:
+      - "8080:8080"
+    depends_on:
+      - order-verticle
+
+  order-verticle:
+    build:
+      context: ./OrderVerticle
